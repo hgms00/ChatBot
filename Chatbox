@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-           <category>
-             <pattern>reset</pattern>
-             <template> Voltando ao inicio.
-             <think> 
-                <set name = "topic">inicio</set>
-                <set name = "materia"></set>
-                <set name = "that"></set>
-                <set name = "IAA_">Não matriculado</set>
-                <set name = "AM_">Não matriculado</set>
-                <set name = "numero_de_matricula"> 0</set>
-             </think>
-             </template>
-           </category>
+            <category>
+                 <pattern>reset</pattern>
+                 <template> Voltando ao inicio.
+                 <think> 
+                    <set name = "topic">inicio</set>
+                    <set name = "materia"></set>
+                    <set name = "that"></set>
+                    <set name = "IAA_">Não matriculado</set>
+                    <set name = "AM_">Não matriculado</set>
+                    <set name = "numero_de_matricula"> 0</set>
+                 </think>
+                 </template>
+            </category>
        
       <!-- Comprovante de Matricula -->
-          <category>
+            <category>
               <pattern>Comprovante de Matricula</pattern>
               <template>
                   Comprovante de Matrícula: <br/> <br/>
@@ -25,7 +25,7 @@
                   
                   <set name="topic"></set>
               </template>
-          </category>
+            </category>
        
        
        
@@ -45,6 +45,8 @@
                     Digite o número de matrícula?
                </template>
            </category>
+           
+           
      
            
 
@@ -96,12 +98,17 @@
    <topic name = "IAA">
        
        <category>
+           <pattern>*</pattern>
+           <template>Não entendi, pode repetir?</template>
+       </category>
+       
+       <category>
            <pattern>Intro</pattern>
            <template>Você deseja realizar a matrícula em Inteligência Artificial Avançada?</template>
        </category>
        
         <category>
-           <pattern>Não</pattern>
+           <pattern>NÃO</pattern>
            <template>
                <think>
                    <set name="topic">AM</set>
@@ -129,6 +136,11 @@
    </topic>
    
    <topic name = "AM">
+         <category>
+             <pattern>*</pattern>
+             <template>Não entendi, pode repetir?</template>
+         </category>
+       
          <category>
              <pattern>Aprendizagem de Maquina</pattern>
              <template>
